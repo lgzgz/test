@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../../lib/jquery_2.2.4.js"></script>
+<body>
+<p title="选择你最喜欢的水果." >你最喜欢的水果是?</p>
+<ul>
+    <li title='苹果'>苹果</li>
+    <li title='橘子'>橘子</li>
+    <li title='菠萝'>菠萝</li>
+</ul>
+
+
+<script>
+/*
+1. 创建两个li节点追加到ul中，内容分别是是猕猴桃和芒果，title分别是猕猴桃和芒果
+2. 再创建一个新节点li，内容是香蕉，添加到ul的最前面
+3. 将title='菠萝'的li移动到ul的最前面
+4. 删除第二个li节点 
+5. 删除第一个li节点, 并将其添加到ul的最后
+6. 删除title=橘子的li
+7. 清空ul内部
+ */
+//1
+$('ul').append('<li title="猕猴桃">猕猴桃</li>').append('<li title="芒果">芒果</li>');
+//2
+var s=$('ul').prepend('<li title="香蕉">香蕉</li>')
+//3
+$('li[title="菠萝"]').prependTo('ul');
+//4
+$('li:eq(1)').remove();
+//5
+$('li:first').remove().appendTo('ul');
+//6
+$('li[title="橘子"]').remove();
+//7
+$('ul').empty();
+
+
+</script>
+</body>
+</html>

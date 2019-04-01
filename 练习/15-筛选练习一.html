@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        .left {
+            width: auto;
+            height: 120px;
+        }
+
+        .left div {
+            width: 150px;
+            height: 90px;
+            padding: 5px;
+            margin: 5px;
+            float: left;
+            background: #bbffaa;
+            border: 1px solid #ccc;
+        }
+
+
+    </style>
+    <script src="../../lib/jquery_2.2.4.js"></script>
+
+</head>
+
+<body>
+<h2>children方法()</h2>
+<div class="left first-div">
+    <div class="div">
+        <ul class="level-1">
+            <li class="item-1">1</li>
+            <li class="item-2">2</li>
+            <li class="item-3">3</li>
+        </ul>
+        <span>11</span>
+    </div>
+    <div class="div">
+        <ul class="level-2">
+            <li class="item-1">1</li>
+            <li class="item-2">2</li>
+            <li class="item-3">3</li>
+        </ul>
+        <span>22</span>
+    </div>
+    <div class="div">
+        <ul class="level-3">
+            <li class="item-1">1</li>
+            <li class="item-2">2</li>
+            <li class="item-3">3</li>
+        </ul>
+        <span>33</span>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    /*
+    1. 找到所有class=div的元素节点，然后找到其对应的子元素，并且加上一个红色边框
+    2. 到所有class=div的元素,找到其最后一个子元素，给边框设置为蓝色
+    3. 在class="left"的元素中找到后代元素li中的最后一个并加上红色的边框
+     */
+     //1
+     $('.div').children().css('border','1px solid red');
+     //2
+     $('.div').children(':last-child').css('border','1px solid blue');
+     //3
+     $('.left li:last-child').css('border','1px solid red');
+</script>
+</body>
+
+</html>

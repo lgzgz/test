@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .high{
+            font-weight:bold;   /* 粗体字 */
+            color : red;        /* 字体颜色设置红色*/
+        }
+        .another{
+            font-style:italic;
+            color:blue;
+        }
+    </style>
+    <script src="../../lib/jquery_2.2.4.js"></script>
+</head>
+<body>
+
+<p title="选择你最喜欢的水果."><strong>你最喜欢的水果是?</strong></p>
+<ul>
+    <li title='苹果'>苹果</li>
+    <li title='橘子'>橘子</li>
+    <li title='菠萝'>菠萝</li>
+</ul>
+
+<input type="text"> <br>
+<input type="text"> <br>
+<input type="text"> <br>
+
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+
+
+<script>
+/*
+1. 设置p的title属性为"Choose your favorite fruit"
+2. 获取p的title属性的值
+3. 删除p的title属性
+4. 为第一个li的title设置为apple,id设置为first
+5. 禁用页面上所有的text框
+6. 勾选页面上所有的checkbox
+7. 恢复页面上所有的text框为可用
+ */
+//1
+$('p').attr('title','Choose your favorite fruit')
+//2
+console.log($('p').attr('title'))
+//3
+$('p').removeAttr('title');
+//4
+$('li:first').attr({
+    'title':'apple',
+    'id':'first'
+    });
+//5
+$(':text').attr('disabled','disabled');
+//6
+$(':checkbox').attr('checked','checked')
+//7
+$(':text').removeAttr('disabled');
+</script>
+</body>
+</html>

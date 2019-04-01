@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../lib/jquery_2.2.4.js"></script>
+</head>
+<body>
+
+<form id="form1" action="#">
+    <input type="button" value="Button"/><br/>
+    <input type="checkbox" name="c"/>1<input type="checkbox" name="c"/>2<input type="checkbox" name="c"/>3<br/>
+    <input type="file" /><br/>
+    <input type="hidden" /><div style="display:none">test</div><br/>
+    <input type="image" /><br/>
+    <input type="password" /><br/>
+    <input type="radio" name="a"/>1<input type="radio" name="a"/>2<br/>
+    <input type="reset" /><br/>
+    <input type="submit" value="提交"/><br/>
+    <input type="text" /><br/>
+    <select><option>Option</option></select><br/>
+    <textarea rows="5" cols="20"></textarea><br/>
+    <button>Button</button><br/>
+</form>
+
+<div></div>
+
+<script>
+/*
+1. id为form1的表单中有多少个type为text的元素
+2. id为form1的表单中有多少个type为password的元素
+3. id为form1的表单中有多少个type为radio的元素
+4. id为form1的表单中有多少个type为checkbox的元素
+5. id为form1的表单中有多少个type为submit的元素
+6. id为form1的表单中有多少个type为image的元素
+7. id为form1的表单中有多少个type为reset的元素
+8. id为form1的表单中有多少个type为button的元素
+9. id为form1的表单中有多少个type为file的元素
+10. id为form1的表单中有多少个type为hidden的元素
+11. id为form1的表单中有多少个type为select的元素
+12. id为form1的表单中有多少个type为textarea的元素
+13. id为form1的表单中有多少个标签名为input元素
+14. id为form1的表单中有多少个input元素（输入型） 包括input, textarea, select 和 button 元素
+
+ */
+ //1
+ var t=$(":text");
+ //2
+ var p=$(':password');
+ //3
+ var r=$(':radio');
+ //4
+ var c=$(':checkbox');
+ //5
+ var s=$(':submit');
+ //6
+ var i=$(':image');
+ //7
+ var re=$(':reset');
+ //8
+ var b=$(':button');
+//9
+ var f=$(':file');
+//10
+ var h=$(':hidden');
+ //11
+var s=$('#form1 select');
+//12
+var txt = $("#form1 textarea");
+//13
+
+var fr=$('#form1 input');
+//14
+var w=$('#form1:input')
+
+
+
+</script>
+</body>
+</html>

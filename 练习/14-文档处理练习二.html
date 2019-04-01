@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../../lib/jquery_2.2.4.js"></script>
+<body>
+<p title="选择你最喜欢的水果." >你最喜欢的水果是?</p>
+<ul>
+    <li title='苹果'>苹果</li>
+    <li title='橘子'>橘子</li>
+    <li title='菠萝'>菠萝</li>
+</ul>
+
+<script>
+/*
+1. 复制title='苹果'的li节点，追加到ul中
+2. 替换p为<strong>你最不喜欢的水果是?</strong>
+3. 用<p>元素包裹<strong>元素
+ */
+//1
+$('li[title="苹果"]').clone().appendTo('ul');
+//2
+$('p').replaceWith('<strong>你最不喜欢的水果是?</strong>');
+//3
+$('strong').wrap('<p></P>');
+</script>
+</body>
+</html>

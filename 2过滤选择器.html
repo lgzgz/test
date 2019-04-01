@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../lib/jquery_2.2.4.js"></script>
+</head>
+<body>
+    <div class="aaa">aaa</div>
+    <div class="aaa">bbb</div>
+    <div class="aaa">ccc</div>
+    <h2>542</h2>
+    <h3>555</h3>
+    <script>
+        $(".aaa:first").css('color','red');//第一个节点对象
+        $(".aaa:last").css('color','blue');//最后一个元素对象
+        $(".aaa:eq(1)").css('color','yellow')//索引2
+        $(":header").html('sss')//查找所有h标签
+        $(".aaa:odd").css('background-color','red');//索引为奇数
+        $(".aaa:gt(0)").css('color','green');//索引大于0
+    </script>
+</body>
+</html>

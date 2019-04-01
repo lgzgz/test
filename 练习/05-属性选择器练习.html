@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div,span,p {
+            width:140px;
+            height:140px;
+            margin:5px;
+            background:#aaa;
+            border:#000 1px solid;
+            float:left;
+            font-size:12px;
+        }
+        div.mini {
+            width:55px;
+            height:55px;
+            background-color: #aaa;
+            font-size:12px;
+        }
+        div.hide {
+            display:none;
+        }
+    </style>
+    <script src="../../lib/jquery_2.2.4.js"></script>
+</head>
+<body>
+<h2>属性选择器</h2>
+<h3>--练习</h3>
+<div class="one" id="one" >
+    id为one,class为one的div
+    <div class="mini">class为mini</div>
+</div>
+
+<div class="one"  id="two" title="test" >
+    id为two,class为one,title为test的div.
+    <div class="mini"  title="other">class为mini,title为other</div>
+    <div class="mini"  title="test">class为mini,title为test</div>
+</div>
+
+<div class="one">
+    <div class="mini">class为mini</div>
+    <div class="mini">class为mini</div>
+    <div class="mini">class为mini</div>
+    <div class="mini"></div>
+</div>
+
+<div class="one">
+    <div class="mini">class为mini</div>
+    <div class="mini">class为mini</div>
+    <div class="mini">class为mini</div>
+    <div class="mini"  title="tesst">class为mini,title为tesst</div>
+</div>
+
+
+<div style="display:none;"  class="none">
+    style的display为"none"的div
+</div>
+
+<div class="hide">class为"hide"的div</div>
+
+<div>
+    包含input的type为"hidden"的div<input type="hidden" size="8"/>
+</div>
+
+
+<script>
+/*
+1. 将含有属性title的div元素的背景色设置为#19A15F
+2. 将属性title的值为test的div元素背景色设置为#BBFFAA
+3. 将属性title的值不等于test的div元素背景色设置为#3A8BE1
+4. 将属性title的值以te开始的div元素背景色设置为#9ED18B
+5. 将属性title的值以est结束的div元素背景色设置为#FFFAE3
+6. 将属性title的值含有es的div元素背景色设置为#00D2DB
+7. 组合属性选择器：将含有属性id并且含有属性title的值含有es的div元素的背景色设置为#37B158
+ */
+//1
+   $("div[title]").css('background','#19A15F');
+//2
+   $("div[title=test]").css('background','#BBFFAA');
+//3
+   $("div[title!=test]").css('background','#3A8BE1');
+//4
+   $("div[title^=te]").css('background','#9ED18B');
+//5
+   $("div[title$=est]").css('background','#FFFAE3');
+//6
+   $("div[title*=es]").css('background','#00D2DB');
+//7
+   $("div[id][title*=es]").css('background','#37B158');
+
+</script>
+</body>
+</html>

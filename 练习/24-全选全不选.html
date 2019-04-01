@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="button" id="all" value="全选">   <input type="button" id="allNo" value="全不选"> 
+        <input type="button" id="reverse" value="反选">  
+        <input type="checkbox" id="allAndNo"> 全选 / 全不选  <br>
+        <input type="checkbox" name="like"> 阅读 <br>
+        <input type="checkbox" name="like"> 书法  <br>
+        <input type="checkbox" name="like"> 游戏
+
+    </form>
+    <script src="../../lib/jquery_2.2.4.js"></script>
+    <script>
+        $(function() {
+            $("#all").click(function() {
+                $(":checkbox[name=like]").prop("checked", true);
+                $("#allAndNo").prop('checked',true);
+            });
+
+            $("#allNo").click(function() {
+                $(":checkbox[name=like]").prop("checked", false);
+                $("#allAndNo").prop('checked',false);
+            });
+
+            $("#reverse").click(function() {
+                $(":checkbox[name=like]").each(function() {
+                    //  $(this).prop("checked", !$(this).prop("checked"));
+                    this.checked = !this.checked;
+                });
+            });
+
+            $("#allAndNo").click(function() {
+                $(":checkbox[name=like]").prop("checked", $(this).prop("checked"));
+            });
+
+            $(":checkbox[name=like]").click(function() {
+                var f = true;  // 假设都选上了
+                $(":checkbox[name=like]").each(function() {
+                    if(!$(this).prop("checked")) {
+                        f = false;
+                    }
+                });
+
+                $("#allAndNo").prop("checked", f);
+            });
+        });
+    </script>
+</body>
+</html>

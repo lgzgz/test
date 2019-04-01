@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font: normal 12px/17px Arial;
+        }
+
+        .msg {
+            width: 300px;
+            margin: 100px;
+        }
+
+        .msg_caption {
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 1px;
+        }
+
+        .msg_caption span {
+            display: block;
+            float: left;
+            margin: 0 2px;
+            padding: 4px 10px;
+            background: #898989;
+            cursor: pointer;
+            color: white;
+        }
+
+        .msg textarea {
+            width: 300px;
+            height: 80px;
+            border: 1px solid #000;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <form action="" method="post">
+        <div class="msg">
+            <div class="msg_caption">
+                <span class="bigger">放大</span>
+                <span class="smaller">缩小</span>
+            </div>
+            <div>
+                <textarea id="comment" rows="8"
+                    cols="20">多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.</textarea>
+            </div>
+        </div>
+    </form>
+
+
+    <script src="../../lib/jquery_2.2.4.js"></script>
+    <script>
+        /*
+         通过点击“放大”和“缩小”实现多行文本框高度变化（到达400不再放大,每次增大或缩小20px）
+          */
+        //正常版
+        // $(function () {
+        //     $(".bigger").click(function () {
+        //         var h = $("#comment").height();
+        //         if (h < 400) {
+        //             $("#comment").height(h + 20);
+        //         }
+        //     })
+        //     $(".smaller").click(function () {
+        //         var h = $("#comment").height();
+        //         if (h > 80) {
+        //             $("#comment").height(h - 20);
+        //         }
+        //     })
+        // })
+        //动画版
+        $(function () {
+            $(".bigger").click(function () {
+                var h = $("#comment").height();
+                 if (h < 400) {
+                    $("#comment").animate({height:"+=20px"},300);
+                }
+            })
+            $(".smaller").click(function () {
+                var h = $("#comment").height();
+                if (h > 80) {
+                    $("#comment").animate({height:"-=20px"},300);
+                }
+            })
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div,span,p {
+            width:140px;
+            height:140px;
+            margin:5px;
+            background:#aaa;
+            border:#000 1px solid;
+            float:left;
+            font-size:12px;
+        }
+        div.mini {
+            width:55px;
+            height:55px;
+            background-color: #aaa;
+            font-size:12px;
+        }
+        div.hide {
+            display:none;
+        }
+    </style>
+    <script src="../../lib/jquery_2.2.4.js"></script>
+</head>
+<body>
+<h2>基本选择器</h2>
+<h3>--练习</h3>
+<div class="one" id="one" >
+    id为one,class为one的div
+    <div class="mini">class为mini</div>
+</div>
+
+<div class="one"  id="two" title="test" >
+    id为two,class为one,title为test的div.
+    <div class="mini"  title="other">class为mini,title为other</div>
+    <div class="mini"  title="test">class为mini,title为test</div>
+</div>
+
+<div class="one">
+    <div class="mini">class为mini</div>
+    <div class="mini">class为mini</div>
+    <div class="mini">class为mini</div>
+    <div class="mini"></div>
+</div>
+
+<div class="one">
+    <div class="mini">class为mini</div>
+    <div class="mini">class为mini</div>
+    <div class="mini">class为mini</div>
+    <div class="mini"  title="tesst">class为mini,title为test</div>
+</div>
+
+
+<div style="display:none;"  class="none">
+    style的display为"none"的div
+</div>
+
+<div class="hide">class为"hide"的div</div>
+
+<div>
+    包含input的type为"hidden"的div<input type="hidden" size="8"/>
+</div>
+
+<script>
+/*
+1. 将id为one的元素的背景色设置为#19A15F
+2. 将class为mini的所有元素背景色设置为#BBFFAA
+3. 将元素名为div的所有元素背景色设置为#3A8BE1
+4. 将页面所有元素背景色设置为#9ED18B
+5. 将span元素和id为two的元素背景色设置为#F69465
+ */
+//1.
+   $("#one").css('background','#19A15F');
+//2.
+   $(".mini").css('background','#BBFFAA');
+//3.
+   $("div").css('background','#3A8BE1');
+//4
+   $("*").css('background','#9ED18B');
+//5
+   $("span,#two").css('background','#F69465');
+ 
+
+
+
+
+
+</script>
+</body>
+</html>

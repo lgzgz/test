@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border: 0;
+            border-collapse: collapse;
+        }
+
+        td {
+            font: normal 12px/17px Arial;
+            padding: 2px;
+            width: 100px;
+        }
+
+        th {
+            font: bold 12px/17px Arial;
+            text-align: left;
+            padding: 4px;
+            border-bottom: 1px solid #333;
+        }
+
+        .even {
+            background: #FFF38F;
+        }
+
+        .odd {
+            background: #FFFFEE;
+        }
+
+        .selected {
+            background: yellowgreen;
+            color: #fff;
+        }
+    </style>
+    <script src="../../lib/jquery_2.2.4.js"></script>
+</head>
+
+<body>
+
+    <table id="stuInfo">
+        <thead>
+            <tr>
+                <th></th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>暂住地</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" name="choice" value="" /></td>
+                <td>张山</td>
+                <td>男</td>
+                <td>浙江宁波</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="choice" value="" /></td>
+                <td>李四</td>
+                <td>女</td>
+                <td>浙江杭州</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="choice" value="" checked='checked' /></td>
+                <td>王五</td>
+                <td>男</td>
+                <td>湖南长沙</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="choice" value="" /></td>
+                <td>找六</td>
+                <td>男</td>
+                <td>浙江温州</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="choice" value="" /></td>
+                <td>Rain</td>
+                <td>男</td>
+                <td>浙江杭州</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="choice" value="" /></td>
+                <td>MAXMAN</td>
+                <td>女</td>
+                <td>浙江杭州</td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <script>
+        /*
+        1. 为表格的奇数行和偶数行分别添加相应的样式
+        2. 在选中某行（勾选前面的复选框）时，应用被选中的样式
+            取消时样式也取消
+         */
+    //1
+    $(function(){
+     $('tr:even').addClass('even');
+     $('tr:odd').addClass('odd');
+     //2
+     $(":checkbox[name=choice]").each(function(){
+           fn(this);
+     })
+     $(":checkbox[name=choice]").click(function(){
+           fn(this);
+     })
+     function fn(that){
+         var a=$(that).parents("tr");
+         var s=$(that).prop('checked');
+         if(s){
+             a.addClass('selected');
+         }else{
+             a.removeClass('selected');
+         }
+     }
+    })
+        
+    </script>
+</body>
+
+</html>

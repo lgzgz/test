@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            .box{
+                width: 100px;
+                height: 100px;
+                background: blue;
+                display: none;
+            }
+        </style>
+        <script src="../lib/jquery_2.2.4.js"></script>
+        <script src="js/jquery.slider.js"></script>
+</head>
+<body>
+        <button id="slideDown">slideDown</button>
+        <button id="slideRight">slideRight</button>
+        <button id="slideLeft">slideLeft</button>
+        <button id="slideToggle2">slideToggle2</button>
+        <div class="box">
+            hello
+        </div> 
+        <script>
+            $("#slideDown").click(function(){
+                $(".box").slideDown(200);
+            })
+            $("#slideRight").click(function(){
+                $(".box").slideRight(200);
+            })
+            $("#slideLeft").click(function(){
+                $(".box").slideLeft(200);
+            })
+            $("#slideToggle2").click(function(){
+                $(".box").slideToggle2(200);
+            })
+        </script>
+</body>
+</html>

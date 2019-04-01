@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border: 0;
+            border-collapse: collapse;
+        }
+
+        div {
+            font: normal 12px/17px Arial;
+        }
+
+        td {
+            font: normal 12px/17px Arial;
+            padding: 2px;
+            width: 100px;
+        }
+ 
+        th {
+            font: bold 12px/17px Arial;
+            text-align: left;
+            padding: 4px;
+            border-bottom: 1px solid #333;
+            width: 100px;
+        }
+    </style>
+    <script src="../../lib/jquery_2.2.4.js"></script>
+</head>
+
+<body>
+    <div>
+        <br />
+        筛选：
+        <input id="filterName" />
+        <br />
+
+    </div>
+
+    <table id="stuInfo">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>暂住地</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>张山</td>
+                <td>男</td>
+                <td>浙江宁波</td>
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>女</td>
+                <td>浙江杭州</td>
+            </tr>
+            <tr>
+                <td>王五</td>
+                <td>男</td>
+                <td>湖南长沙</td>
+            </tr>
+            <tr>
+                <td>找六</td>
+                <td>男</td>
+                <td>浙江温州</td>
+            </tr>
+            <tr>
+                <td>Rain</td>
+                <td>男</td>
+                <td>浙江杭州</td>
+            </tr>
+            <tr>
+                <td>MAXMAN</td>
+                <td>女</td>
+                <td>浙江杭州</td>
+            </tr>
+            <tr>
+                <td>王六</td>
+                <td>男</td>
+                <td>浙江杭州</td>
+            </tr>
+            <tr>
+                <td>李字</td>
+                <td>女</td>
+                <td>浙江杭州</td>
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>男</td>
+                <td>湖南长沙</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- <div class="box">
+        <p>helloworld</p>
+        
+    </div>
+
+    <div class="box">
+
+        <p>你好</p>
+    </div> -->
+    
+    <script>
+        /*
+        在“筛选”输入框中输入关键字（可以是性别，姓名或暂住地信息）后，下方表格中列出符合筛选关键字的行。
+         */
+       $(function(){
+           $("#filterName").keyup(function(){
+              var a=$(this).val();
+              $("tr").hide().filter(":contains("+a+")").show();
+           })
+       })
+    </script>
+</body>
+
+</html>

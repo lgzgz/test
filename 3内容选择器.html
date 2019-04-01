@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../lib/jquery_2.2.4.js"></script>
+</head>
+<body>
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+        <div class="box">9</div>
+        <div class="box">10</div>
+    
+        <div class="a">苹果笔记本</div>
+        <p class="b">联想笔记本</p>
+        <div class="b">跳绳</div>
+        <div class="b">羽毛球</div>
+        <script>
+        $("body :contains(笔记本):not(script)").css('color','red');//查找含有笔记本的对象
+        $("div.box").css('color','red')//查找div下包含box的
+        </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        div {
+            padding: 4px;
+        }
+
+        input, textarea {
+            width: 200px;
+            border: 1px solid #888;
+            outline: none;
+            padding: 0 4px;
+        }
+
+        input{
+            height: 24px;
+        }
+
+        .focus {
+            border: 1px solid #f00;
+        }
+
+        fieldset{
+            border-color: #eee;
+            width: 600px;
+        }
+
+        legend{
+            font-weight:bold;
+        }
+    </style>
+    <script src="../../lib/jquery_2.2.4.js"></script>
+    <script type="text/javascript">
+        // 输入框聚焦时样式为focus，失去焦点时还原。
+        $(document).ready(function(){
+            $(':text,:password,textarea').focus(function(){
+                $(this).addClass('focus');
+            }).blur(function(){
+                $(this).removeClass('focus'); 
+            })
+        })
+
+    </script>
+</head>
+<body>
+<form action="" method="post" id="regForm">
+    <fieldset>
+        <legend>个人基本信息</legend>
+        <div>
+            <label for="username">名称:</label>
+            <input id="username" type="text"/>
+        </div>
+        <div>
+            <label for="pass">密码:</label>
+            <input id="pass" type="password"/>
+        </div>
+        <div>
+            <label for="msg">详细信息:</label>
+            <textarea id="msg" rows="3" cols="20"></textarea>
+        </div>
+    </fieldset>
+</form> 
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .high{
+            font-weight:bold;   /* 粗体字 */
+            color : rgb(238, 231, 231);        /* 字体颜色设置红色*/
+        }
+        .another{
+            font-style:italic;
+            color:blue;
+        }
+    </style>
+    <script src="../../lib/jquery_2.2.4.js"></script>
+</head>
+<body>
+
+<p title="选择你最喜欢的水果."><strong>你最喜欢的水果是?</strong></p>
+<ul>
+    <li title='苹果'>苹果</li>
+    <li title='橘子'>橘子</li>
+    <li title='菠萝'>菠萝</li>
+</ul>
+
+
+<script>
+/*
+1. 获取p元素的color
+2. 将p元素的color设置为red
+3. 将p元素的字体大小设置为30px，背景色设置为#888
+4. 为p元素添加样式high
+5. 为p元素添加样式another
+6. 删除p元素的high样式
+7. 切换p元素的样式anthor
+8. 删除p元素的所有class样式
+ */
+//1
+var c=$('p').css('color');
+//2.3
+$('p').css({
+    'color':'red',
+    'font-size':'30px',
+    'background':'#888'
+    });
+//4 
+$('p').addClass('hign');
+//5
+$('p').addClass('another');
+//6 7
+$('p').removeClass('hign');
+//7
+$('p').removeClass('another');
+//8
+$('p').removeClass();
+
+
+</script>
+</body>
+</html>

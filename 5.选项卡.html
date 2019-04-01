@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .tab{
+            width: 300px;
+            height: 260px;
+            border: 1px solid red;
+            margin: 40px auto;
+        }
+        .tab .title{
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px solid orange;
+            font-size: 0;
+        }
+        .content div{
+            display: none;
+        }
+        .tab .title span{
+            display: inline-block;
+            font-size: 14px;
+            text-align: center;
+            width: 100px;
+        }
+        .title .active{
+            background: orangered;
+        }
+        .content .move{
+            display: block;
+        }
+
+
+       
+    </style>
+    <script src="../lib/jquery_2.2.4.js"></script>
+    <script src="js/mytab.js"></script>
+</head>
+
+<body>
+        <div class="tab">
+                <div class="title">
+                   <span class="active">AAA</span>
+                   <span>BBB</span>
+                   <span>CCC</span>
+                </div>
+                <div class="content">
+                   <div class="move">1111</div>
+                   <div>2222</div>
+                   <div>3333</div>
+                </div>
+            </div>
+            
+</body>
+    <script>
+    $(".tab").tab({
+       click:true,
+       auto:true
+    });
+    </script>
+</html>

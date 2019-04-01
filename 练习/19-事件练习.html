@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font: 12px/19px Arial, Helvetica, sans-serif;
+            color: #666;
+        }
+
+        form div {
+            margin: 5px 0;
+        }
+
+        .int label {
+            float: left;
+            width: 100px;
+            text-align: right;
+        }
+
+        .int input {
+            padding: 1px 1px;
+            border: 1px solid #ccc;
+            height: 16px;
+        }
+
+        .sub {
+            padding-left: 100px;
+        }
+
+        .sub input {
+            margin-right: 10px;
+        }
+
+        .formtips {
+            width: 200px;
+            margin: 2px;
+            padding: 2px;
+        }
+
+        .onError {
+            background: #FFE0E9 url(img/reg3.gif) no-repeat 0 center;
+            padding-left: 25px;
+        }
+
+        .onSuccess {
+            background: #E9FBEB url(img/reg4.gif) no-repeat 0 center;
+            padding-left: 25px;
+        }
+
+        .high {
+            color: red;
+        }
+    </style>
+    <script src="../../lib/jquery_2.2.4.js"></script>
+</head>
+
+<body>
+
+
+    <form method="post" action="success.html" id="regForm">
+        <div class="int">
+            <label for="username">用户名:</label>
+            <input type="text" id="username" class="required" />
+        </div>
+        <div class="int">
+            <label for="email">邮箱:</label>
+            <input type="text" id="email" class="required" />
+        </div>
+        <div class="int">
+            <label for="personinfo">个人资料:</label>
+            <input type="text" id="personinfo" />
+        </div>
+        <div class="sub">
+            <input type="submit" value="提交" id="send" /><input type="reset" id="res" />
+        </div>
+    </form>
+
+    <script>
+        /*
+        1. 如果是必填项（class=require),请为其后增加红色的*（class=high)标识
+        2. 在文本框失去焦点后，进行校验
+            a) 用户名长度至少6位,不符合要求在其后提示"请输入至少6位的用户名"，并应用样式formtips及onError
+                否则提示"输入正确“并应用formtips及onSuccess样式
+            b) 邮箱校验时不符合邮箱格式要求，则提示"请输入正确的E-Mail地址"
+                否则提示“输入正确”,其它同用户名
+        3. 提交时，全部验证一遍，无误则弹出“注册成功”提示。
+        4. 重置时，用户填写内容清除，且所有提示框（正确和错误）都消失。
+         */
+        //1
+        $('.required').after('<span class="high">*</span>');
+        //2
+        $("#regForm :text").blur(function(){
+            var that = $(this);
+            that.nextAll(".formtips").remove();
+            if(that.is("#username")){
+                if(that.val().length < 6){
+                    that.parent().append("<span class='formtips onError'>请输入至少6位的用户名</span>");
+                }else {
+                        that.parent().append("<span class='formtips onSuccess'>输入正确</span>");
+                    }
+            }else if(that.is("#email")){
+                var pattern = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+                if(!pattern.test(that.val())){
+                    that.parent().append("<span class='formtips onError'>请输入正确的E-Mail地址</span>");
+                }else{
+                    that.parent().append("<span class='formtips onSuccess'>输入正确</span>");
+                }
+            }
+        }).keyup(function(){
+            $(this).triggerHandler("blur");
+        })
+        $("#regForm").submit(function () {
+                $("#regForm :text").trigger("blur");
+                var errSize = $(this).find(".onError").size();
+                if (errSize === 0) {  // 正确
+                    alert("注册成功！");
+                } else {              // 有误
+                    return false;
+                }
+
+            });
+        $('#res').click(function () {
+            $('regForm .formtips').remove();
+        })
+
+    </script>
+
+</body>
+
+</html>

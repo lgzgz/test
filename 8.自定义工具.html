@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    table{
+        width: 60%;
+        line-height: 26px;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    table, th, td{
+        border: 1px solid #ddd;
+    }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>NO</th>
+                <th>NAME</th>
+                <th>PRICE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>显示器</td>
+                <td>1000</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>鼠标</td>
+                <td>300</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>音响</td>
+                <td>2999.9</td>
+            </tr>
+            <tr class="last">
+                <td colspan="2">总价</td>
+                <td id="box"></td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="../lib/jquery_2.2.4.js"></script>
+    <script src="js/tools.js"></script>
+    <script>
+       $(function(){
+           //把页面上的单价封装成一个数组
+         var r= $("tbody tr :nth-child(3)").map(function(index,item){
+              return $(item).text();
+          }).get();
+          $("#box").html($.sum(r))
+       })
+    </script>
+</body>
+</html>

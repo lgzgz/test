@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="add">button</button>
+    <ul id="ul">
+    </ul>
+    <script>
+        //根据id查找元素
+        var btn = document.getElementById('add');
+        var ul = document.getElementById('ul');
+        var lis = ul.children;
+        var t;
+        var s = 0;
+        //点击事件
+        btn.onclick = function () {
+            t = setInterval(next, 1000);
+        }
+        //创建li事件
+        function next() {
+            var li = document.createElement('li');
+            //内容
+            li.innerHTML = s;
+            s++;
+            ul.appendChild(li);
+            //当length大于10时停止
+            if (lis.length >= 10) {
+                clearInterval(t);
+            }
+        }
+        //第二种
+        // btn.onclick = function () {
+        //     for (var i = 0; i < 10; i++) {
+        //         (function (j) {
+        //             setTimeout(function () {
+        //                 var li=document.createElement("li");
+        //                 li.innerHTML=j;
+        //                 ul.appendChild(li);
+        //             },(j+1)*1000)
+        //         }(i))
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

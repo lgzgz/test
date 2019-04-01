@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div,span,p {
+            width:140px;
+            height:140px;
+            margin:5px;
+            background:#aaa;
+            border:#000 1px solid;
+            float:left;
+            font-size:12px;
+        }
+        div.mini {
+            width:55px;
+            height:55px;
+            background-color: #aaa;
+            font-size:12px;
+        }
+        div.hide {
+            display:none;
+        }
+    </style>
+    <script src="../../lib/jquery_2.2.4.js"></script>
+</head>
+<body>
+<h2>层级选择器</h2>
+<h3>--练习</h3>
+<div class="one" id="one" >
+    id为one,class为one的div
+    <div class="mini">class为mini</div>
+</div>
+
+<div class="one"  id="two" title="test" >
+    id为two,class为one,title为test的div.
+    <div class="mini"  title="other">class为mini,title为other</div>
+    <div class="mini"  title="test">class为mini,title为test</div>
+</div>
+
+<div class="one">
+    <div class="mini">class为mini</div>
+    <div class="mini">class为mini</div>
+    <div class="mini">class为mini</div>
+    <div class="mini"></div>
+</div>
+
+<div class="one">
+    <div class="mini">class为mini</div>
+    <div class="mini">class为mini</div>
+    <div class="mini">class为mini</div>
+    <div class="mini"  title="tesst">class为mini,title为tesst</div>
+</div>
+
+
+<div style="display:none;"  class="none">
+    style的display为"none"的div
+</div>
+
+<div class="hide">class为"hide"的div</div>
+
+<div>
+    包含input的type为"hidden"的div<input type="hidden" size="8"/>
+</div>
+
+<script>
+/*
+1. 将body内所有div元素的背景色设置为#19A15F
+2. 将body内的元素名是div 的子（直接）元素背景色设置为#BBFFAA
+3. 将所有class为one 的下一个div元素元素背景色设置为#3A8BE1
+4. 将 id为two的元素后面的所有div兄弟元素背景色设置为#9ED18B
+ */
+//1
+  $("body div").css('background','#19A15F');
+//2
+  $("div >div ").css('background','#BBFFAA');
+//3
+  $(".one + div").css('background','#3A8BE1');
+//4
+  $("#two~div").css('background','#9ED18B');
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

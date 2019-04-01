@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div,span,p {
+            width:140px;
+            height:140px;
+            margin:5px;
+            background:#aaa;
+            border:#000 1px solid;
+            float:left;
+            font-size:12px;
+        }
+        div.mini {
+            width:55px;
+            height:55px;
+            background-color: #aaa;
+            font-size:12px;
+        }
+        div.hide {
+            display:none;
+        }
+    </style>
+    <script src="../../lib/jquery_2.2.4.js"></script>
+</head>
+<body>
+<h2>子元素过滤选择器</h2>
+<h3>--练习</h3>
+<div class="one" id="one" >
+    id为one,class为one的div
+    <div class="mini">class为mini</div>
+</div>
+
+<div class="one"  id="two" title="test" >
+    id为two,class为one,title为test的div.
+    <div class="mini"  title="other">class为mini,title为other</div>
+    <div class="mini"  title="test">class为mini,title为test</div>
+</div>
+
+<div class="one">
+    <div class="mini">class为mini</div>
+    <div class="mini">class为mini</div>
+    <div class="mini">class为mini</div>
+    <div class="mini"></div>
+</div>
+
+<div class="one">
+    <div class="mini">class为mini</div>
+    <div class="mini">class为mini</div>
+    <div class="mini">class为mini</div>
+    <div class="mini"  title="tesst">class为mini,title为tesst</div>
+</div>
+
+
+<div style="display:none;"  class="none">
+    style的display为"none"的div
+</div>
+
+<div class="hide">class为"hide"的div</div>
+
+<div>
+    包含input的type为"hidden"的div<input type="hidden" size="8"/>
+</div>
+
+
+
+<script>
+/*
+1. 将class为one的div元素的第2个子元素背景色设置为#19A15F。
+2. 将class为one的div元素的第1个子元素背景色设置为#BBFFAA。
+3. 将class为one的div元素的最后1个子元素背景色设置为#3A8BE1。
+4. 将class为one的div元素且只有一个子元素背景色设置为#3A8BE1。
+ */
+ //1
+   $('.one div:nth-child(2)').css('background','#19A15F');
+ //2
+   $('.one div:first-child').css('background','#BBFFAA');
+//3
+   $('.one div:last-child').css('background','#3A8BE1');
+//4
+   $('.one div:only-child').css('background','#3A8BE1');
+
+
+</script>
+</body>
+</html>

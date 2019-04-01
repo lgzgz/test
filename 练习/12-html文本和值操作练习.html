@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .test {
+            font-weight: bold;
+            color: red;
+        }
+
+        .add {
+            font-style: italic;
+        }
+    </style>
+     <script src="../../lib/jquery_2.2.4.js"></script>
+</head>
+
+<body>
+
+    <p title="选择你最喜欢的水果."><strong>你最喜欢的水果是?</strong></p>
+    <ul>
+        <li title='苹果'>苹果</li>
+        <li title='橘子'>橘子</li>
+        <li title='菠萝'>菠萝</li>
+    </ul>
+
+    <input type="button" value="这是一个按钮">
+
+
+    <script>
+        /*
+        1. 获取p元素的html代码
+        2. 获取p元素的文本
+        3. 设置p元素的html代码为<strong>What is your favorite fruit?</strong>
+        4. 设置p元素的text文本为What is your favorite fruit?
+        5. 设置p元素的text文本为<strong>What is your favorite fruit?</strong>
+        6. 获取button的value值
+        7. 设置button的value为this is a button
+         */
+        //1
+        $('p').html();
+        //2
+        $('p').text();
+        //3
+        $('p').html('<strong>What is your favorite fruit?</strong>');
+        //4
+        $('p').text('What is your favorite fruit?');
+        //5
+        $('p').text('<strong>What is your favorite fruit?</strong>');
+        //6
+        $(":button").val();
+        //7
+        $(':button').val('this is a button');
+       
+    </script>
+</body>
+
+</html>
